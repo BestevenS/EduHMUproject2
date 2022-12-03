@@ -19,7 +19,7 @@
 int A[D_max][D_max];
 
 // Pinakas akeraiwn 3 * 11
-int B[3][11];
+int B[Br][Bc];
 
 // Diastaseis neou pinaka
 int M, N;
@@ -35,6 +35,8 @@ void randomGenerator();
 
 // kataskeui pinaka B
 void createB();
+
+void printArrayB();
 
 
 int main(){
@@ -74,6 +76,8 @@ int main(){
     // A[M][N] array
 
     randomGenerator();
+
+    createB();
 
 }
 
@@ -124,11 +128,26 @@ void randomGenerator(){
 }
 
 void printArrayA(){
+    
+    printf("\n");
+
+    for(int i = 0; i < N; i++){
+        if(i == 0){
+            printf("%6d", i);
+        }
+
+        else
+            printf("%3d", i);
+    }
+    
+    printf("\n");
+    
     for(int i = 0; i < M; i++){
+        printf("%3d", i);
         for(int j = 0; j < N; j++){
             // emfanizoume tin timi tou kathe stoixeiou tou pinaka
             // to \t prostheti ena tab(keno) meta apo kathe stoixeio
-            printf("%d\t", A[i][j]);
+            printf("%3d", A[i][j]);
         }
         // meta apo kathe grammi(row) kanoume allagi grammis gia na
         // einai pio euanagnwsto to apotelesma
@@ -150,15 +169,13 @@ void createB(){
     // to by xekinaei kanonika po to 0
     int bx = 1, by = 0;
 
-    // trexoume mesa se olo ton pinaka A
+    printf("\n\n");
     for(int i = 0; i < M; i++){
-
         for(int j = 0; j < N; j++){
-            
-            // an to A[i][j] den einai 0, tote exei tuxaio arithmo
-            // kai prepei na to valoume sto pinaka B
+
+            printf("%3d", A[i][j]);
             if(A[i][j] != 0){
-                
+
                 // vazoume ti grammi pou brisketai to stixeio
                 B[bx][by] = i;
                 
@@ -180,13 +197,34 @@ void createB(){
                 // auksanoume kata 1 ton metrhth grammis gia na 
                 // apothikeusoume to epomeno stixeio stin epomeni grammi
                 bx++;
-                
+
+
                 // afou teleiwsame me auti tin grammi, xeroume oti sthn epomeni
                 // tha prepei na xekinisoume pali apo tin 0 sthlh
                 // opote metavaloume tin timi tou by se 0
                 by = 0;
+
+                // by = 0; line destroying the program, fuck me 
             }
         }
+        // meta apo kathe grammi(row) kanoume allagi grammis gia na
+        // einai pio euanagnwsto to apotelesma
+        printf("\n");
+    }
 
+    printArrayB();
+}
+
+void printArrayB(){
+    printf("\n\nmy array B\n\n");
+    for(int i = 0; i < Bc; i++){
+        for(int j = 0; j < Br; j++){
+            // emfanizoume tin timi tou kathe stoixeiou tou pinaka
+            // to \t prosthetei ena tab(keno) meta apo kathe stoixeio
+            printf("%4d", B[i][j]);
+        }
+        // meta apo kathe grammi(row) kanoume allagi grammis gia na
+        // einai pio euanagnwsto to apotelesma
+        printf("\n");
     }
 }
