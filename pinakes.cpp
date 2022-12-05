@@ -247,8 +247,4 @@ void calcs(){
     }
     printArrayB();
     
-    // for(int i = 1; i < Br; i++){
-    //     sum = B[i][0] + B[i][1];
-    // }
-    
 }
