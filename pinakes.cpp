@@ -11,8 +11,8 @@
 #define D_max 60
 
 // statheres tis diastaseis tou pinaka B
-#define Br 3    // rows
-#define Bc 11   // columns
+#define Br 11    // rows
+#define Bc 3   // columns
 
 
 // tetragwnikos pinakas A D_max * D_max
@@ -179,25 +179,21 @@ void createB(){
                 // vazoume ti grammi pou brisketai to stixeio
                 B[bx][by] = i;
                 
-                
                 // auksanoume kata 1 ton metrhth sthlhs
                 by++;
 
                 // vazoume tin sthlh pou brisketai to stixeio
                 B[bx][by] = j;
                 
-
                 // auksanoume kata 1 ton metrhth sthlhs
                 by++;
 
                 // vazoume to tuxaio arithmo pou brisketai stin thesi
                 B[bx][by] = A[i][j];
                 
-
                 // auksanoume kata 1 ton metrhth grammis gia na 
                 // apothikeusoume to epomeno stixeio stin epomeni grammi
                 bx++;
-
 
                 // afou teleiwsame me auti tin grammi, xeroume oti sthn epomeni
                 // tha prepei na xekinisoume pali apo tin 0 sthlh
@@ -217,8 +213,8 @@ void createB(){
 
 void printArrayB(){
     printf("\n\nmy array B\n\n");
-    for(int i = 0; i < Bc; i++){
-        for(int j = 0; j < Br; j++){
+    for(int i = 0; i < Br; i++){
+        for(int j = 0; j < Bc; j++){
             // emfanizoume tin timi tou kathe stoixeiou tou pinaka
             // to \t prosthetei ena tab(keno) meta apo kathe stoixeio
             printf("%4d", B[i][j]);
