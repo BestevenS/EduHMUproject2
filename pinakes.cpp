@@ -38,6 +38,7 @@ void createB();
 
 void printArrayB();
 
+void calcs();
 
 int main(){
 
@@ -78,6 +79,8 @@ int main(){
     randomGenerator();
 
     createB();
+
+    calcs();
 
 }
 
@@ -223,4 +226,29 @@ void printArrayB(){
         // einai pio euanagnwsto to apotelesma
         printf("\n");
     }
+}
+
+void calcs(){
+    for(int i = 1; i < Br; i++){
+        int sum = 0;
+        for(int j = 0; j < Bc - 1; j++){
+            // emfanizoume tin timi tou kathe stoixeiou tou pinaka
+            // to \t prosthetei ena tab(keno) meta apo kathe stoixeio
+            sum = sum + B[i][j];
+        }
+         
+            if(sum % 2 == 0){
+                B[i][2] = 2 * B[i][2];
+            }
+
+            else 
+                B[i][2] = 3 * B[i][2];
+
+    }
+    printArrayB();
+    
+    // for(int i = 1; i < Br; i++){
+    //     sum = B[i][0] + B[i][1];
+    // }
+    
 }
