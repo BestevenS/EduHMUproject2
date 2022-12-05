@@ -229,26 +229,20 @@ void printArrayB(){
 }
 
 void calcs(){
-    for(int i = 1; i < Br; i++){
-        int sum = 0;
-        for(int j = 0; j < Bc - 1; j++){
-            // emfanizoume tin timi tou kathe stoixeiou tou pinaka
-            // to \t prosthetei ena tab(keno) meta apo kathe stoixeio
-            sum = sum + B[i][j];
-        }
-         
-            if(sum % 2 == 0){
-                B[i][2] = 2 * B[i][2];
-            }
-
-            else 
-                B[i][2] = 3 * B[i][2];
-
-    }
+    int sum = 0;
     printArrayB();
     
-    // for(int i = 1; i < Br; i++){
-    //     sum = B[i][0] + B[i][1];
-    // }
+    for(int i = 1; i < Br; i++){
+        sum = B[i][0] + B[i][1];
+
+        if(sum % 2 == 0){
+            B[i][2] = 2 * B[i][2];
+        }
+
+        else 
+            B[i][2] = 3 * B[i][2];
+    }
+
+    printArrayB();
     
 }
