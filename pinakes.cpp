@@ -78,9 +78,17 @@ int main(){
 
     randomGenerator();
 
+    printArrayA();
+
     createB();
 
+    printArrayB();
+
     calcs();
+
+    printArrayB();
+
+    printArrayA();
 
 }
 
@@ -125,8 +133,6 @@ void randomGenerator(){
         }
 
     }
-
-    printArrayA();
 
 }
 
@@ -211,7 +217,6 @@ void createB(){
         printf("\n");
     }
 
-    printArrayB();
 }
 
 void printArrayB(){
@@ -230,19 +235,19 @@ void printArrayB(){
 
 void calcs(){
     int sum = 0;
-    printArrayB();
     
     for(int i = 1; i < Br; i++){
         sum = B[i][0] + B[i][1];
 
         if(sum % 2 == 0){
             B[i][2] = 2 * B[i][2];
+
+            // Metafora twn newn timwn ston A
+            A[B[i][0]][B[i][1]] = B[i][2];
         }
 
         else 
             B[i][2] = 3 * B[i][2];
     }
-
-    printArrayB();
     
 }
