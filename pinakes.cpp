@@ -225,7 +225,7 @@ void printArrayB(){
         for(int j = 0; j < Bc; j++){
             // emfanizoume tin timi tou kathe stoixeiou tou pinaka
             // to \t prosthetei ena tab(keno) meta apo kathe stoixeio
-            printf("%4d", B[i][j]);
+            printf("%5d", B[i][j]);
         }
         // meta apo kathe grammi(row) kanoume allagi grammis gia na
         // einai pio euanagnwsto to apotelesma
