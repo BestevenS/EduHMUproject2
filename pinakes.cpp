@@ -239,15 +239,13 @@ void calcs(){
     for(int i = 1; i < Br; i++){
         sum = B[i][0] + B[i][1];
 
-        if(sum % 2 == 0){
-            B[i][2] = 2 * B[i][2];
-
+        if(sum % 2 == 0)
             // Metafora twn newn timwn ston A
-            A[B[i][0]][B[i][1]] = B[i][2];
-        }
+            A[B[i][0]][B[i][1]] = B[i][2] = 2 * B[i][2];
 
         else 
-            B[i][2] = 3 * B[i][2];
+            // Metafora twn newn timwn ston A
+            A[B[i][0]][B[i][1]] = B[i][2] = 3 * B[i][2];
     }
     
 }
